@@ -1,15 +1,7 @@
-import sqlite3
+from sqlalchemy import create_engine
 
-conn = sqlite3.connect(
-    r"C:\project\data\db\bluestock_mf.db"
+engine = create_engine(
+    r"sqlite:///C:/project/database/bluestock_mf.db"
 )
 
-cursor = conn.cursor()
-
-cursor.execute(
-    "SELECT name FROM sqlite_master WHERE type='table';"
-)
-
-print(cursor.fetchall())
-
-conn.close()
+print("Database OK")
